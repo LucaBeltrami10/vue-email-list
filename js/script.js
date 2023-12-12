@@ -9,5 +9,9 @@ createApp({
 
     methods: {
 
+    },
+
+    created(){
+        
     }
 }) .mount('#app');
