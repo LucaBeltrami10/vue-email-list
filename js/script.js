@@ -11,10 +11,10 @@ createApp({
     methods: {
     createEmailInArray(){
         for(let i = 0; i< 10; i++ ){
-            this.randomEmail.push( axios.get('https://flynn.boolean.careers/exercises/api/random/mail').then((response) =>{
+            axios.get('https://flynn.boolean.careers/exercises/api/random/mail').then((response) =>{
                 console.log(response)
                 return this.randomEmail.push(response.data.response)
-            }))
+            })
             
         }
         console.log(this.randomEmail)
