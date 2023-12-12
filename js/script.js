@@ -9,8 +9,8 @@ createApp({
     },
 
     methods: {
-    createXEmailInArray(numberOfEmail){
-        for(let i = 0; i< numberOfEmail; i++ ){
+    createXEmailInArray(){
+        for(let i = 0; i< 10; i++ ){
             this.randomEmail.push( axios.get('https://flynn.boolean.careers/exercises/api/random/mail').then((response) =>  randomEmail = response.data.response) )
         }
 
@@ -19,7 +19,8 @@ createApp({
     },
 
     created(){
-        
+        this.createXEmailInArray(),
+        console.log(this.randomEmail)
         
     }
 }) .mount('#app');
