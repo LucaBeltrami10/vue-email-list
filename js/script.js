@@ -9,18 +9,20 @@ createApp({
     },
 
     methods: {
-    createXEmailInArray(){
+    createEmailInArray(){
         for(let i = 0; i< 10; i++ ){
-            this.randomEmail.push( axios.get('https://flynn.boolean.careers/exercises/api/random/mail').then((response) =>  randomEmail = response.data.response) )
+            this.randomEmail.push( axios.get('https://flynn.boolean.careers/exercises/api/random/mail').then((response) =>{
+                console.log(response)
+                return this.randomEmail.push(response.data.response)
+            }))
+            
         }
-
+        console.log(this.randomEmail)
     }
 
     },
 
     created(){
-        this.createXEmailInArray(),
-        console.log(this.randomEmail)
-        
+        this.createEmailInArray()
     }
 }) .mount('#app');
